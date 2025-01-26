@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Geração de som de texto para fala com Next.js
 
-## Getting Started
+Bem-vindo ao projeto **Geração de som de texto para fala** criado usando Next.js! Este projeto demonstra a geração de som usando modelos de rosto de abraço pré-treinados. Os usuários podem selecionar diferentes modelos de som de rosto de abraço e inserir texto para gerar o áudio correspondente. O áudio gerado pode ser reproduzido diretamente na interface da web.
 
-First, run the development server:
+## Visão geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este projeto mostra como alavancar modelos de IA pré-treinados junto com a API de inferência **Hugging Face** para converter texto de entrada em fala sintetizada. A interface do usuário fornece uma seleção de modelos de som para escolher e um campo de entrada para inserir o texto desejado. Uma vez enviado, o aplicativo busca o áudio gerado da API do modelo e o apresenta em um reprodutor de áudio.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Este aplicativo depende muito da estabilidade dos modelos da Hugging Face Inference API. Observe que erros aleatórios ocasionais podem ocorrer.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como executar o projeto
 
-## Learn More
+### Pré-requisitos
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js
+- npm
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Instalação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/Joclelsonr/text-to-speech-hugging-face.git
+   ```
+2. Navegue até o diretório do projeto:
+   ```sh
+   cd text-to-speech-hugging-face
+   ```
+3. Instalar dependências:
+   ```sh
+   npm install
+   ```
+4. Adicione o token de acesso Hugging Face ao seu arquivo `.env.local`:
+   ```sh
+   HUGGING_FACE_TOKEN=seu_token_de_acesso
+   ```
+   O token de acesso pode ser criado no site [Hugging Face](https://huggingface.co/settings/tokens).
 
-## Deploy on Vercel
+### Executando o aplicativo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Inicie o servidor de desenvolvimento:
+   ```sh
+   npm run dev
+   ```
+2. Abra seu navegador e visite `http://localhost:3000` para acessar o aplicativo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Uso
+
+1. Abra o aplicativo no seu navegador após executá-lo.
+2. No menu suspenso "Modelo de IA", selecione um modelo para gerar som.
+3. Insira o texto desejado no campo de entrada "Texto".
+4. Clique no botão "Enviar".
+5. O áudio gerado aparecerá em um reprodutor de áudio abaixo.
